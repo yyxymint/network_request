@@ -105,3 +105,16 @@ def by_xp(s):
 # 			write_ws['E'+str(row)]=now_cancer_name
 # 			write_ws['F'+str(row)]=appendlist[q]
 # write_wb.save('edited.xlsx')
+
+
+
+docker run \
+    --detach \
+    --gpus=all \
+    --restart=always \
+    --name=$(whoami)-jupyterlab \
+    --publish=80 \
+    --publish=6006 \
+    --volume=/home/$(whoami)/notebooks:/notebooks \
+    --volume=/storage/$(whoami):/storage \
+    jonghwanhyeon/jupyterlab
