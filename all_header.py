@@ -113,8 +113,9 @@ docker run \
     --gpus=all \
     --restart=always \
     --name=$(whoami)-jupyterlab \
-    --publish=80 \
+    --network=nginx-proxy \
     --publish=6006 \
+    --env VIRTUAL_HOST="yemintmint.keai.io" \
     --volume=/home/$(whoami)/notebooks:/notebooks \
     --volume=/storage/$(whoami):/storage \
     jonghwanhyeon/jupyterlab
