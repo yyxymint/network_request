@@ -1,0 +1,24 @@
+FROM ghcr.io/jonghwanhyeon/jupyterlab:latest
+ 
+ARG uid
+ARG gid
+ 
+RUN apt-get update && apt-get install -y \
+        sudo \
+    && rm -rf /var/lib/apt/lists/*
+ 
+RUN addgroup --gid=$gid naviworks \
+    && adduser --shell /bin/bash --disabled-password --gecos="Naviworks,,," --uid=$uid --ingroup=naviworks naviworks \
+    && adduser naviworks sudo \
+    && sed -i "s/%sudo.*/%sudo   ALL=(ALL:ALL) NOPASSWD:ALL/g" /etc/sudoers
+ 
+RUN cp -r /root/.jupyter /home/naviworks/.jupyter \
+    && chown -R naviworks:naviworks /home/naviworks/.jupyter
+ 
+USER naviworks
+VOLUME /workspace
+RUN chown naviworks:naviworks /workspace
+RUN ln --symbolic /workspace /home/naviworks/workspace
+WORKDIR /home/naviworks/workspace
+ 
+CMD jupyter lab
