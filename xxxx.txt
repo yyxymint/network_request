@@ -1,11 +1,11 @@
-mkdir -p /home/$(whoami)/workspace && docker run \
+docker run \
     --detach \
     --gpus=all \
     --restart=always \
-    --name=$(whoami)-jupyterlab \
+    --name=$(whoami)-jupyterla-naviworks \
     --network=nginx-proxy \
     --env VIRTUAL_HOST="yemintmint-naviworks.keai.io" \
     --env LETSENCRYPT_HOST="yemintmint-naviworks.keai.io" \
     --env LETSENCRYPT_EMAIL="yemintmint@kaist.ac.kr" \
-    --volume=/home/$(whoami)/workspace:/workspace \
+    --volume=/home/yemintmint/notebooks/naviworks:/workspace \
     $(whoami)/jupyterlab:run-as-user
