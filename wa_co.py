@@ -1,3 +1,5 @@
+RX72PERTOJZ7XBQI
+
 def call_ranking():
     for _ in range(15):
         print()
