@@ -1,6 +1,6 @@
 
 
-def finder(follower,following):
+def finder(follower=follower,following=following):
 	real_following=[]
 	for i in following:
 		t=i.find('님의 프로필 사진')
