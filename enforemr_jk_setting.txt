@@ -1,4 +1,4 @@
 ## LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/ychwang/.conda/pkgs/lib64
 
 PATH=$PATH:/home/ychwang/.conda/pkgs/targets/x86_64-linux/lib/bin
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/ychwang/.conda/pkgs/targets/x86_64-linux/lib/lib64
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/ychwang/.conda/pkgs/targets/x86_64-linux/lib/lib64:/home/gskim/.conda/envs/gskim/lib/
