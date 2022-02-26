@@ -1,3 +1,4 @@
 ## LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/ychwang/.conda/pkgs/lib64
 
-LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64:/home/ychwang/.conda/pkgs/targets/x86_64-linux/lib
+PATH=$PATH:/home/ychwang/.conda/pkgs/targets/x86_64-linux/lib/bin
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/ychwang/.conda/pkgs/targets/x86_64-linux/lib/lib64
