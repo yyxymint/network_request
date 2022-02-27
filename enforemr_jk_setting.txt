@@ -35,3 +35,6 @@ docker run \
     --volume=/home/$(whoami)/notebooks:/notebooks \
     --volume=/storage/$(whoami):/storage \
     jonghwanhyeon/jupyterlab
+
+
+06903224247d5cdf38e08c943f26900345c0ba2f75d8a531
