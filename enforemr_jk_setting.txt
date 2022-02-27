@@ -2,3 +2,18 @@
 
 PATH=$PATH:/home/ychwang/.conda/pkgs/targets/x86_64-linux/lib/bin
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/ychwang/.conda/pkgs/targets/x86_64-linux/lib/lib64:/home/gskim/.conda/envs/gskim/lib/
+
+
+
+
+docker run \
+    --detach \
+    --gpus=all \
+    --restart=always \
+    --name=$(whoami)-jupyterlab \
+    --network=nginx-proxy \
+    --publish=6006 \
+    --env VIRTUAL_HOST="yemintmint.keai.io" \
+    --volume=/home/$(whoami)/notebooks:/notebooks \
+    --volume=/storage/$(whoami):/storage \
+    jonghwanhyeon/jupyterlab
