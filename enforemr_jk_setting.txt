@@ -6,35 +6,5 @@ LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/ychwang/.conda/pkgs/targets/x86_64-linux/
 
 
 
-docker run \
-    --detach \
-    --gpus=all \
-    --restart=always \
-    --name=$(whoami)-jupyterlab \
-    --network=nginx-proxy \
-    --publish=6006 \
-    --env VIRTUAL_HOST="yemintmint.keai.io" \
-    --volume=/home/$(whoami)/notebooks:/notebooks \
-    --volume=/storage/$(whoami):/storage \
-    jonghwanhyeon/jupyterlab
-
-
-
-
-
-
-
-
-docker run \
-    --detach \
-    --gpus=all \
-    --restart=always \
-    --name=$(whoami)-jupyterlab \
-    --publish=80 \
-    --publish=6006 \
-    --volume=/home/$(whoami)/notebooks:/notebooks \
-    --volume=/storage/$(whoami):/storage \
-    jonghwanhyeon/jupyterlab
-
-
-06903224247d5cdf38e08c943f26900345c0ba2f75d8a531
+2.  https://klms.kaist.ac.kr/course/view.php?id=
+3.  course를 user로, view를 index로  https://klms.kaist.ac.kr/user/index.php?id=
