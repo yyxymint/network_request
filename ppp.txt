@@ -26,7 +26,7 @@ docker run \
     --name=$(whoami)-jupyterlab \
     --network=nginx-proxy \
     --publish=6006 \
-    --env VIRTUAL_HOST="yemint.keai.io" \
+    --env VIRTUAL_HOST="yemintmint.keai.io" \
     --volume=/home/$(whoami)/notebooks:/notebooks \
     --volume=/storage/$(whoami):/storage \
     jonghwanhyeon/jupyterlab
