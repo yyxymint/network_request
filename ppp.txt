@@ -39,6 +39,7 @@ docker run \
     --name=$(whoami)-jupyterlab \
     --publish=80 \
     --publish=6006 \
+     --shm-size 8G \
     --volume=/home/$(whoami)/notebooks:/notebooks \
     --volume=/storage/$(whoami):/storage \
     jonghwanhyeon/jupyterlab
