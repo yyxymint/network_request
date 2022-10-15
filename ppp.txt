@@ -26,6 +26,7 @@ docker run \
     --name=$(whoami)-jupyterlab \
     --network=nginx-proxy \
     --publish=6006 \
+    --shm-size 8G \
     --env VIRTUAL_HOST="yemintmint.keai.io" \
     --volume=/home/$(whoami)/notebooks:/notebooks \
     --volume=/storage/$(whoami):/storage \
