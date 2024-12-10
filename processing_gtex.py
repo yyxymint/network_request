@@ -67,23 +67,16 @@ for chrom in chrom_strand_gene.keys():
 
             exn_sta = ''
             exn_end = ''
-            bp=''
+            
 
             chrom_strand_gene[chrom][strand][gene][2]=list(chrom_strand_gene[chrom][strand][gene][2])
             chrom_strand_gene[chrom][strand][gene][3]=list(chrom_strand_gene[chrom][strand][gene][3])
-            chrom_strand_gene[chrom][strand][gene][4]=list(chrom_strand_gene[chrom][strand][gene][4])
             
-            if len(chrom_strand_gene[chrom][strand][gene][4])==0:
-                print(gene)
-                out_gene+=1
-                continue
             
-            else:
-                in_gene+=1
             
             chrom_strand_gene[chrom][strand][gene][2].sort()
             chrom_strand_gene[chrom][strand][gene][3].sort()
-            chrom_strand_gene[chrom][strand][gene][4].sort()
+
 
             for p in chrom_strand_gene[chrom][strand][gene][2]:
                 exn_sta+=str(p)+','
@@ -91,11 +84,8 @@ for chrom in chrom_strand_gene.keys():
             for p in chrom_strand_gene[chrom][strand][gene][3]:
                 exn_end+=str(p)+','
                 
-            for p in chrom_strand_gene[chrom][strand][gene][4]:
-                if p not in chrom_strand_gene[chrom][strand][gene][2] and p not in chrom_strand_gene[chrom][strand][gene][3]:
-                    bp+=str(p)+','
 
-            rr = sen_with_tab([gene,0,chrom,strand,jn_sta,jn_end,exn_sta,exn_end,bp])
+            rr = sen_with_tab([gene,0,chrom,strand,jn_sta,jn_end,exn_sta,exn_end])
 
             f.write(rr+'\n')
         
