@@ -2,7 +2,7 @@ docker run \
     --detach \
     --gpus=all \
     --restart=always \
-    --name=$(whoami)-jupyterlab \
+    --name=$(whoami)-jupyterlab-stab \
     --publish=80 \
     --publish=6006 \
     --volume=/home/$(whoami)/notebooks:/notebooks \
